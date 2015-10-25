@@ -17,4 +17,16 @@
   <url>
     <loc>http://misitegj.github.io/mainpage/</loc>
   </url>
+  <url>
+    <loc>http://misitegj.github.io/blog/categories/ios/</loc>
+  </url>
+  <url>
+    <loc>http://misitegj.github.io/blog/categories/html5/</loc>
+  </url>
+  <url>
+    <loc>http://misitegj.github.io/blog/categories/ruby/</loc>
+  </url>
+  <url>
+    <loc>http://misitegj.github.io/blog/categories/node-dot-js/</loc>
+  </url>
 </urlset>

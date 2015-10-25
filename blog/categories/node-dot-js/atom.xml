@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: node.js | My Octopress Blog]]></title>
+  <link href="http://misitegj.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
+  <link href="http://misitegj.github.io/"/>
+  <updated>2015-10-25T12:59:36+08:00</updated>
+  <id>http://misitegj.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Welcome to Samuel Chen's Blog]]></title>
+    <link href="http://misitegj.github.io/blog/2015/10/24/samuel-mainpage/"/>
+    <updated>2015-10-24T21:36:56+08:00</updated>
+    <id>http://misitegj.github.io/blog/2015/10/24/samuel-mainpage</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
