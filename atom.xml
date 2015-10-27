@@ -4,7 +4,7 @@
   <title><![CDATA[Samuel Chen's Blog]]></title>
   <link href="http://misitegj.github.io/atom.xml" rel="self"/>
   <link href="http://misitegj.github.io/"/>
-  <updated>2015-10-26T21:55:48+08:00</updated>
+  <updated>2015-10-27T22:35:38+08:00</updated>
   <id>http://misitegj.github.io/</id>
   <author>
     <name><![CDATA[Samuel Chen]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Charles]]></title>
+    <link href="http://misitegj.github.io/blog/2015/10/27/charles/"/>
+    <updated>2015-10-27T22:30:53+08:00</updated>
+    <id>http://misitegj.github.io/blog/2015/10/27/charles</id>
+    <content type="html"><![CDATA[<h1>iOS开发工具-网络封包分析工具Charles</h1>
+
+<blockquote><p><a href="http://blog.devtang.com/blog/2013/12/11/network-tool-charles-intr/">http://blog.devtang.com/blog/2013/12/11/network-tool-charles-intr/</a></p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[常用Git命令]]></title>
