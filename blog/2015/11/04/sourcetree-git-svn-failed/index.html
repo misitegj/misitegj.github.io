@@ -5,23 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>常用Git命令 - Samuel Chen's Blog</title>
+  <title>SourceTree 提交到svn时出现的问题 - Samuel Chen's Blog</title>
   <meta name="author" content="Samuel Chen">
 
   
-  <meta name="description" content="常用的git命令 本地操作 git commit
-git add
-git checkout
-git config
-git merge
-git branch
-git clean
-git reset
-git revert
-git stash
-git show
-git log
-git rebase &hellip;">
+  <meta name="description" content="svn项目转成git后, 用sourceTree提交出现错误 引用 http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80% &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -30,7 +18,7 @@ git rebase &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://misitegj.github.io/blog/2015/10/25/2015nian-10yue-25ri/">
+  <link rel="canonical" href="http://misitegj.github.io/blog/2015/11/04/sourcetree-git-svn-failed/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Samuel Chen's Blog" type="application/atom+xml">
@@ -80,7 +68,7 @@ git rebase &hellip;">
   
   <header>
     
-      <h1 class="entry-title">常用Git命令</h1>
+      <h1 class="entry-title">SourceTree 提交到svn时出现的问题</h1>
     
     
       <p class="meta">
@@ -89,58 +77,28 @@ git rebase &hellip;">
 
 
 
-<time class='entry-date' datetime='2015-10-25T21:47:15+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:47 pm</span></time>
+<time class='entry-date' datetime='2015-11-04T23:36:56+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:36 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>常用的git命令</h3>
+<div class="entry-content"><h1>svn项目转成git后, 用sourceTree提交出现错误</h1>
 
-<p>本地操作</p>
+<p>引用</p>
 
-<ul>
-<li>git commit</li>
-<li>git add</li>
-<li>git checkout</li>
-<li>git config</li>
-<li>git merge</li>
-<li>git branch</li>
-<li>git clean</li>
-<li>git reset</li>
-<li>git revert</li>
-<li>git stash</li>
-<li>git show</li>
-<li>git log</li>
-<li>git rebase</li>
-<li>git amend</li>
-<li>git -h</li>
-</ul>
+<blockquote><p><a href="http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</a></p></blockquote>
+
+<p>SourceTree在检出时提示Can’t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)。这个问题可以参考<a href="http://www.contrid.co.za/2014/10/solved-os-x-yosemite-git-svn-broken/">这里</a>。大致意思是Perl的SVN没有正确和Xcode中的SVN链接起来（升级完Yosemite之后可能出现的问题）。链接完后提示另一个错误：Can’t locate loadable object for module SVN::_Core in @INC。这说明其它组件没有被正确加载，执行另一条链接命令。具体命令如下2条命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /System/Library/Perl/Extras/5.18/SVN</span></code></pre></td></tr></table></div></figure>
 
 
-<p>远程仓库</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN/ /System/Library/Perl/Extras/5.18/auto/SVN</span></code></pre></td></tr></table></div></figure>
 
-<ul>
-<li>git clone</li>
-<li>git push</li>
-<li>git pull</li>
-<li>git fetch</li>
-<li>git remote add</li>
-</ul>
-
-
-<p>SVN</p>
-
-<ul>
-<li>git svn clone filePath git_repo_name // svn转git仓库</li>
-<li>git svn rebase</li>
-<li>git svn dcommit</li>
-</ul>
-
-
-<p>第三方工具<a href="https://www.sourcetreeapp.com/">SourceTree</a>
-可以操作后, 看历史命令记录来进一步学习</p>
 </div>
 
 
@@ -156,7 +114,7 @@ git rebase &hellip;">
 
 
 
-<time class='entry-date' datetime='2015-10-25T21:47:15+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:47 pm</span></time>
+<time class='entry-date' datetime='2015-11-04T23:36:56+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:36 pm</span></time>
       
 
 
@@ -171,10 +129,8 @@ git rebase &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/10/25/setup-octopress/" title="Previous Post: Mac系统利用Octopress搭建静态网站">&laquo; Mac系统利用Octopress搭建静态网站</a>
+        <a class="basic-alignment left" href="/blog/2015/11/04/wireshark-on-macos-x/" title="Previous Post: Wireshark on MacOS X">&laquo; Wireshark on MacOS X</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/10/27/charles/" title="Next Post: Charles">Charles &raquo;</a>
       
     </p>
   </footer>
@@ -183,7 +139,7 @@ git rebase &hellip;">
   <section>
     <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/blog/2015/10/25/2015nian-10yue-25ri" data-title="page.title" data-url="http://misitegj.github.io/blog/2015/10/25/2015nian-10yue-25ri/"></div>
+	<div class="ds-thread" data-thread-key="/blog/2015/11/04/sourcetree-git-svn-failed" data-title="page.title" data-url="http://misitegj.github.io/blog/2015/11/04/sourcetree-git-svn-failed/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

@@ -9,8 +9,7 @@
   <meta name="author" content="Samuel Chen">
 
   
-  <meta name="description" content="iOS开发工具-网络封包分析工具Charles http://blog.devtang.com/blog/2013/12/11/network-tool-charles-intr/
-">
+  <meta name="description" content="svn项目转成git后, 用sourceTree提交出现错误 引用 http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80% &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +71,124 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/11/04/sourcetree-git-svn-failed/">SourceTree 提交到svn时出现的问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-04T23:36:56+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:36 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>svn项目转成git后, 用sourceTree提交出现错误</h1>
+
+<p>引用</p>
+
+<blockquote><p><a href="http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">http://tech.myonlylonely.com/sourcetree%E5%9C%A8yosemite%E4%B8%8B%E6%8F%90%E4%BA%A4%E5%88%B0sae%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</a></p></blockquote>
+
+<p>SourceTree在检出时提示Can’t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)。这个问题可以参考<a href="http://www.contrid.co.za/2014/10/solved-os-x-yosemite-git-svn-broken/">这里</a>。大致意思是Perl的SVN没有正确和Xcode中的SVN链接起来（升级完Yosemite之后可能出现的问题）。链接完后提示另一个错误：Can’t locate loadable object for module SVN::_Core in @INC。这说明其它组件没有被正确加载，执行另一条链接命令。具体命令如下2条命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /System/Library/Perl/Extras/5.18/SVN</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN/ /System/Library/Perl/Extras/5.18/auto/SVN</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/04/wireshark-on-macos-x/">Wireshark on MacOS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-04T23:20:40+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:20 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Mac OS X上使用Wireshark抓包</h1>
+
+<p>引用</p>
+
+<blockquote><p><a href="http://blog.csdn.net/phunxm/article/details/38590561">http://blog.csdn.net/phunxm/article/details/38590561</a></p></blockquote>
+
+<h2>步骤</h2>
+
+<ul>
+<li>安装<a href="http://xquartz.macosforge.org/landing/">XQuartz</a>, UNIX Like系统的GUI发行版界面采用的是X Window</li>
+<li>安装<a href="https://www.wireshark.org/download.html">Wireshark</a>, 抓包工具</li>
+</ul>
+
+
+<p>需要注销一下, 第一次启动Wireshark比较慢, 请耐心</p>
+
+<h2>使用Wireshark</h2>
+
+<ul>
+<li></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ifconfig //查看当前网卡</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Interface List 选择网卡, start</li>
+</ul>
+
+
+<p>如果是真机调试可以用RVI(remote virtual interface)</p>
+
+<blockquote><p><a href="http://blog.csdn.net/demondev/article/details/17141071">http://blog.csdn.net/demondev/article/details/17141071</a></p></blockquote>
+
+<p><code>rvictl -l</code> <code>rvictl -s</code> <code>rvictl -x</code>建个虚拟接口</p>
+
+<p>抓包存在缓存文件中, 再用工具读取</p>
+
+<blockquote><p><a href="http://www.cnblogs.com/wupher/archive/2013/03/25/2980161.html">http://www.cnblogs.com/wupher/archive/2013/03/25/2980161.html</a></p></blockquote>
+
+<ul>
+<li>设置Filter过滤条件
+<code>tcp &amp;&amp; ip.src==192.168.1.2 &amp;&amp;ip.dst==60.28.208.161</code></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2015/10/27/charles/">Charles</a></h1>
     
     
@@ -127,6 +244,7 @@
 <li>git commit</li>
 <li>git add</li>
 <li>git checkout</li>
+<li>git config</li>
 <li>git merge</li>
 <li>git branch</li>
 <li>git clean</li>
@@ -148,6 +266,16 @@
 <li>git push</li>
 <li>git pull</li>
 <li>git fetch</li>
+<li>git remote add</li>
+</ul>
+
+
+<p>SVN</p>
+
+<ul>
+<li>git svn clone filePath git_repo_name // svn转git仓库</li>
+<li>git svn rebase</li>
+<li>git svn dcommit</li>
 </ul>
 
 
@@ -382,6 +510,14 @@ public文件夹是网站的主目录, 博客源代码在source/_posts</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/04/sourcetree-git-svn-failed/">SourceTree 提交到svn时出现的问题</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/11/04/wireshark-on-macos-x/">Wireshark on MacOS X</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/10/27/charles/">Charles</a>
       </li>
     
@@ -391,10 +527,6 @@ public文件夹是网站的主目录, 博客源代码在source/_posts</p>
     
       <li class="post">
         <a href="/blog/2015/10/25/setup-octopress/">Mac系统利用Octopress搭建静态网站</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/10/24/samuel-mainpage/">Welcome to Samuel Chen's Blog</a>
       </li>
     
   </ul>
